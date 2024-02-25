@@ -26,11 +26,11 @@ class AlanWake(App):
     series: Dict[str, CollectibleSeries] = {
         "can_pyramids": CollectibleSeries(
             name="Can pyramids",
-            full_set=set(str(i + 1) for i in range(12)),
+            full_set=set(str(i) for i in range(1, 12 + 1)),
         ),
         "chests": CollectibleSeries(
             name="Chests",
-            full_set=set(str(i + 1) for i in range(30)),
+            full_set=set(str(i) for i in range(1, 30 + 1)),
         ),
         "coconut_songs": CollectibleSeries(
             name="Coconuts songs",
@@ -38,34 +38,35 @@ class AlanWake(App):
         ),
         "alarm_clocks": CollectibleSeries(
             name="Alarm clocks",
-            full_set=set(str(i + 1) for i in range(10)),
+            full_set=set(str(i) for i in range(1, 10 + 1)),
         ),
         "cardboard_cutouts": CollectibleSeries(
             name="Cardboard cutouts",
-            full_set=set(str(i + 1) for i in range(6)),
+            full_set=set(str(i) for i in range(1, 6 + 1)),
         ),
         "video_games": CollectibleSeries(
             name="Video games",
-            full_set=set(str(i + 1) for i in range(10)),
+            full_set=set(str(i) for i in range(1, 10 + 1)),
         ),
         "radio_shows": CollectibleSeries(
             name="Radio shows",
-            full_set=set(str(i + 1) for i in range(11)),
+            full_set=set(str(i) for i in range(1, 11 + 1)),
         ),
         "signs": CollectibleSeries(
             name="Signs",
-            full_set=set(str(i + 1) for i in range(25)),
+            full_set=set(str(i) for i in range(1, 25 + 1)),
         ),
         "thermos": CollectibleSeries(
             name="Thermos",
-            full_set=set(str(i + 1) for i in range(100)),
+            full_set=set(str(i) for i in range(1, 101 + 1) if i != 90),  # For some reason, there's no thermos 90 ?
             description="Mind the fact that the provided ID are in-game ID. Those may follow the logical progression "
                         "in the story but it's not proven. For example, thermos 77 is the 73rd in online guides, and "
-                        "thermos 87 is 83rd."
+                        "thermos 87 is 83rd.\n"
+                        "Also, it seems that there's no thermos 90."
         ),
         "tv_shows": CollectibleSeries(
             name="TV shows",
-            full_set=set(str(i + 1) for i in range(14)),
+            full_set=set(str(i) for i in range(1, 14 + 1)),
         ),
     }
 
