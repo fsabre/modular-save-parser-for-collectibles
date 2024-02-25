@@ -10,7 +10,6 @@ NAMED_SECTIONS_COUNT = 10
 SECTION_TITLE_TO_SERIES_NAME: Dict[str, str] = {
     "CANPYRAMIDS": "can_pyramids",
     "CHESTS": "chests",
-    "COCONUTSONGS": "coconut_songs",
     "DLC1_ALARMCLOCKS": "alarm_clocks",
     "DLC1_CARDBOARDCUTOUTS": "cardboard_cutouts",
     "DLC2_NIGHTSPRINGSVIDEOGAMES": "video_games",
@@ -31,10 +30,6 @@ class AlanWake(App):
         "chests": CollectibleSeries(
             name="Chests",
             full_set=set(str(i) for i in range(1, 30 + 1)),
-        ),
-        "coconut_songs": CollectibleSeries(
-            name="Coconuts songs",
-            full_set=set(),
         ),
         "alarm_clocks": CollectibleSeries(
             name="Alarm clocks",
@@ -127,6 +122,10 @@ class AlanWake(App):
         obtained: List[str] = []
         for _ in range(obtained_count):
             obtained.append(str(next(feed)))
+
+        if title == "COCONUTSONGS":
+            # Those are not collectibles, just a wierd way to track an achievement.
+            return
 
         # Update the series
         series_name = SECTION_TITLE_TO_SERIES_NAME.get(title)
