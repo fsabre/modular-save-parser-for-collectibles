@@ -24,6 +24,16 @@ app.parse()
 # Display the result
 
 for series in app.series.values():
-    missing = series.find_missing()
-    missing_count = len(missing)
-    print(f"{series.name} : {missing_count} missing ({', '.join(missing)})")
+    print(f"=== {series.name} ===")
+    if series.description != "":
+        print(series.description)
+    total_count: int = len(series.full_set)
+    obtained_count: int = len(series.obtained_set)
+    print(f"Completion : {obtained_count}/{total_count}")
+    missing_list = list(series.find_missing())
+    if len(missing_list) > 0:
+        if all(id.isdigit() for id in missing_list):
+            missing_list.sort(key=lambda id: int(id))
+        else:
+            missing_list.sort()
+        print(f"The missing ones are : {', '.join(missing_list)}")

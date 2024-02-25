@@ -14,6 +14,7 @@ class CollectibleSeries:
     name: str
     full_set: Set[str]
     obtained_set: Set[str] = field(default_factory=set)
+    description: str = ""
 
     def mark_as_obtained(self, collectible: str) -> None:
         """Mark one collectible as obtained.
