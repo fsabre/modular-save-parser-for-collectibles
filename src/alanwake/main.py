@@ -59,6 +59,9 @@ class AlanWake(App):
         "thermos": CollectibleSeries(
             name="Thermos",
             full_set=set(str(i + 1) for i in range(100)),
+            description="Mind the fact that the provided ID are in-game ID. Those may follow the logical progression "
+                        "in the story but it's not proven. For example, thermos 77 is the 73rd in online guides, and "
+                        "thermos 87 is 83rd."
         ),
         "tv_shows": CollectibleSeries(
             name="TV shows",
