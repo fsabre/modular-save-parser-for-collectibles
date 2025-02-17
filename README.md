@@ -12,9 +12,9 @@ I aim to create a modular program, flexible enough to allow devs to cover more g
 
 ## Supported games
 
-| Game name | App name   | Comment                                                                                                   |
-|-----------|------------|-----------------------------------------------------------------------------------------------------------|
-| Alan Wake | `alanwake` | Still in development: it retrieves an id for each collectible, but it may not be the same id as in guides |
+| Game name | App name   | Comment                                                                                   |
+|-----------|------------|-------------------------------------------------------------------------------------------|
+| Alan Wake | `alanwake` | Retrieve the list of in-game collectible ID, which are already ordered for the most part. |
 
 Once again, this program is made to support more than one game, don't hesitate to make a pull request.
 
@@ -35,3 +35,12 @@ python -m src APP_NAME
 ```
 
 You may want to change constants in the `src/constants.py` file if the program doesn't work properly.
+
+## Roadmap
+
+This project is not actively maintained. I will update it if I need its framework for another game.
+
+Nevertheless, here's a list of possible improvements:
+
+- Add support for more games
+- Make it friendlier to edit constants such as paths
